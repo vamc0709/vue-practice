@@ -18,17 +18,19 @@
     </header>
     <section id="events">
       <h2>Events in action</h2>
-      <button v-on:click="add(5)">Add</button>
-      <button v-on:click="reduce(1)">Reduce</button>
+      <button @click="add(5)">Add</button>
       <p v-once>Starting Counter: {{ counter }}</p>
+      <button @click="reduce(1)">Subtract</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-bind:value="name" v-on:input="setName($event,'sangeetha')" v-on:keyup.enter="confirmedInput">
-      <button v-on:click="resetInput">Reset Input</button>
-      <p>Your Name: {{ confirmedName }}</p>
-      <form v-on:submit.prevent="submitForm">
+      <!-- <input type="text" v-model="name"> -->
+      <input type="text" v-model="lastName">
+      <input type="text" v-model="name"v-on:keyup.enter="outputFullname">
+      <button @click="resetInput">Reset Input</button>
+      <p>Your Name: {{ fullname }}</p>
+      <!-- <form v-on:submit.prevent="submitForm">
         <input type="text"/>
         <button>Sign Up</button>
-      </form>
+      </form> -->
       <!-- <h2>My Course Goal</h2>
        <p v-html="coarseGoal()"></p> -->
       <!--<p>{{ outputGoal() }}</p>
